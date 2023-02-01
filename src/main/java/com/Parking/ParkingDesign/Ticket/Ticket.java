@@ -1,7 +1,9 @@
 package com.Parking.ParkingDesign.Ticket;
 
 import com.Parking.ParkingDesign.Vehicle.*;
+import jakarta.persistence.Entity;
 
+//@Entity
 public class Ticket {
     private int EntryTime;
     private int ExitTime;

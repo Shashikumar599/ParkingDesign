@@ -10,21 +10,23 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
+import java.util.HashMap;
+import java.util.Map;
+
+@SpringBootApplication(/*exclude = {DataSourceAutoConfiguration.class }*/)
 public class ParkingDesignApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ParkingDesignApplication.class, args);
 
 		System.out.println("Hello world!");
-		ParkingSpotManager parkingSpotManager2=new ParkingSpotManager2();
-		for(int i=0;i<10;i++){
-			parkingSpotManager2.ParkingSpots.add(new ParkingSpot(i+1));
-		}
-		ParkingSpotManager parkingSpotManager3=new ParkingSpotManager3();
-		for(int i=0;i<2;i++){
-			parkingSpotManager3.ParkingSpots.add(new ParkingSpot(i+20));
-		}
+//         Map<Object,Object> map=new HashMap<>();
+//
+//		 map.put("Owner","Shashi");
+//		 map.put("Vehicleno",1432);
+//		 map.put("VehicleType",2);
+
+//		 Vehicle vehicle=Vehiclefactory.getVehicle(map);
 //		Vehicle vehicle1=new ThreeWheel(1234 ,"P A");
 //		Ticket ticket1= EntryGate.CreateTicket(vehicle1 ,parkingSpotManager3,3);
 //

@@ -1,6 +1,12 @@
 package com.Parking.ParkingDesign.Vehicle;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 //import VehicleType;
+@Entity
 public class Vehicle {
+    @Id
     int Vehicle_Number;
     String Owner;
 
