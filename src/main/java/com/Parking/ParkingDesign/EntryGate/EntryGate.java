@@ -5,16 +5,22 @@ import com.Parking.ParkingDesign.Ticket.*;
 import com.Parking.ParkingDesign.Vehicle.Vehicle;
 import com.Parking.ParkingDesign.Vehicle.Vehicledao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
-
+@Service
 public class EntryGate {
-//    @Autowired
-//    private static Vehicledao vehicledao;
+    @Autowired
+//    @Qualifier("Vehicledao")
+    private  Vehicledao vehicledao;
 //    @Autowired
 //    private static Ticketdao ticketdao;
+    public EntryGate(){
+
+    };
     public  Map<Object,Object> CreateTicket(Vehicle vehicle, ParkingSpotManager parkingSpotManager, int CurrTime){
               int Id=parkingSpotManager.AddVehicle(vehicle);
               Map<Object,Object> response=new HashMap<>();

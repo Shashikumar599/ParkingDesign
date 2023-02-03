@@ -34,9 +34,10 @@ public class Vehiclefactory {
 //        if(!map.isEmpty())
 //            return null;
         System.out.println("entry4");
-        if(VehicleType==2)
-            return  new TwoWheel(Vehicleno,Owner);
-        else
-            return new ThreeWheel(Vehicleno,Owner);
+        return new Vehicle(Vehicleno,Owner);
+//        if(VehicleType==2)
+//            return  new TwoWheel(Vehicleno,Owner);
+//        else
+//            return new ThreeWheel(Vehicleno,Owner);
     }
 }

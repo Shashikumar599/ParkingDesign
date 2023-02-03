@@ -1,20 +1,25 @@
 package com.Parking.ParkingDesign.Vehicle;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
 //import VehicleType;
-@Entity
+@Entity  @Component
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Vehicle {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int Vehicle_Number;
     String Owner;
 
     VehicleType vehicleType;
-    Vehicle(int Vehicle_Number ,String Owner ){
+    public Vehicle(){};
+    public  Vehicle(int Vehicle_Number ,String Owner ){
         this.Vehicle_Number=Vehicle_Number;
         this.Owner=Owner;
-//        this.Tyre=Tyre;
+        this.vehicleType= VehicleType.valueOf("TwoWheeler");
     }
 
     public int getVehicle_Number() {

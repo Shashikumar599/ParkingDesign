@@ -1,4 +1,4 @@
-package Ticket;
+package com.Parking.ParkingDesign.Ticket;
 
 public class Cost {
     protected int FirstHrCost;

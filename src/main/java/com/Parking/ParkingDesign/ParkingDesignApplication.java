@@ -7,13 +7,23 @@ import com.Parking.ParkingDesign.EntryGate.EntryGate;
 import com.Parking.ParkingDesign.Ticket.Ticket;
 import com.Parking.ParkingDesign.Vehicle.*;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import java.util.HashMap;
 import java.util.Map;
 
-@SpringBootApplication(/*exclude = {DataSourceAutoConfiguration.class }*/)
+//@SpringBootApplication(/*exclude = {DataSourceAutoConfiguration.class }*/)
+//@SpringBootApplication(scanBasePackages={//"com.Parking.ParkingDesign.Vehicle"
+//		//
+//		/*,
+//		"com.Parking.ParkingDesign.Ticket",
+//		"com.Parking.ParkingDesign.ParkingSpot","com.Parking.ParkingDesign.EntryGate" */ })
+@SpringBootApplication(scanBasePackages = {"com.Parking.ParkingDesign"})
+@EnableAutoConfiguration
+@EnableJpaRepositories
 public class ParkingDesignApplication {
 
 	public static void main(String[] args) {
